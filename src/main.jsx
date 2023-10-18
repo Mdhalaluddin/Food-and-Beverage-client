@@ -8,6 +8,8 @@ import {
 import Route from './Route/Route';
 import ErrorPage from './components/Page/ErrorPage/ErrorPage';
 import Home from './components/Page/Home/Home';
+import AddCardPage from './components/Page/AddCardPage/AddCardPage';
+import CardDetails from './components/Page/Home/CardDetails/CardDetails';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,15 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home> 
+      },
+      {
+        path:'/addproduct',
+        element:<AddCardPage></AddCardPage>
+      },
+      {
+        path: "/food/:id",
+        element:<CardDetails></CardDetails>,
+        loader: ()=> fetch('http://localhost:5000/food')
       }
     ]
     
