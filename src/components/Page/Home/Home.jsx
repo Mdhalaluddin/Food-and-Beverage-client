@@ -1,4 +1,3 @@
-import FoodBrand from "./FoodBrand/FoodBrand";
 import Footer from "./Footer/Footer";
 import Navbar from "./Navbar/Navbar";
 import Cover from "./Cover/Cover";
@@ -41,7 +40,7 @@ const Home = () => {
     // ]
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/brand', {
+        fetch('http://localhost:5000/food', {
             method: "GET",
             headers: {
                 'content-type': "application/json"
@@ -54,17 +53,15 @@ const Home = () => {
         <div>
             <Navbar></Navbar>
             <Cover></Cover>
-            <div className="grid md:grid-cols-3 gap-6 my-10 content-center max-w-[92%] mx-auto">
             <div className="mt-11 mb-6">
                 <p className="font-bold text-center my-2 italic text-red-700">Best Food Menu</p>
                 <h2 className="text-4xl text-center font-serif font-semibold">Our Popular Food Items</h2>
-                <div className="grid lg:grid-cols-4 md:grid-cols-3 justify-center max-w-[92%] mx-auto mt-10 gap-4">
+                <div className="grid md:grid-cols-3 justify-center max-w-[92%] mx-auto mt-10 gap-4">
 
                     {
                         data.slice(0, 6).map(card => <Cards key={card.id} card={card}></Cards>)
                     }
                 </div>
-            </div>
             </div>
             <Footer></Footer>
         </div>
