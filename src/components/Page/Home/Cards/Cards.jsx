@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 
 const Cards = ({ card }) => {
-    const { name, _id, brandName, price, category, description, photo } = card;
+    const { name, _id, brandName, price, photo } = card;
     return (
         <div className="card  bg-gray-600 shadow-xl">
             <figure><img src={photo} alt="photo" className="h-[200px] w-full"/></figure>
@@ -24,5 +25,9 @@ const Cards = ({ card }) => {
         </div>
     );
 };
+
+Cards.propTypes ={
+    card: PropTypes.array
+}
 
 export default Cards;

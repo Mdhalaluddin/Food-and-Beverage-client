@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+// import PropTypes from 'prop-types';
 
 
 const CardDetails = () => {
@@ -8,7 +9,6 @@ const CardDetails = () => {
     const { id } = useParams();
     const card = cards.find(card => card._id === id)
     console.log(cards, card, id);
-    const { name, _id, brandName, price, category, description, photo } = card;
     return (
 
         <>
@@ -43,5 +43,8 @@ const CardDetails = () => {
         </>
     );
 };
+// CardDetails.propTypes ={
+//     card: PropTypes.array
+// }
 
 export default CardDetails;
