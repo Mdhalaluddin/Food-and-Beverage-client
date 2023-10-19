@@ -15,6 +15,7 @@ import AllFood from './components/Page/Home/AllFood/AllFood';
 import Login from './components/Page/Login/Login';
 import Registration from './components/Page/Registration/Registration';
 import AuthProvider from './components/Provider/AuthProvider';
+import PrivetRoute from './components/PriverRoute/PrivetRoute';
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/food/:id",
-        element: <CardDetails></CardDetails>,
+        element: <PrivetRoute><CardDetails></CardDetails></PrivetRoute>,
         loader: () => fetch('http://localhost:5000/food')
       },
       {

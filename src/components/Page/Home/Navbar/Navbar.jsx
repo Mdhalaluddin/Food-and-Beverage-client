@@ -6,15 +6,14 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    // const {newUser}=useLoaderData()
-    // console.log(newUser);
-    
-    const handleSignOut =()=>{
+    // const newUser = useLoaderData()
+
+    const handleSignOut = () => {
         logOut()
-        .then()
-        .cath()
+            .then()
+            .cath()
     }
-    
+
     const navLink = <>
         <li className="text-white"><NavLink to="/">Home</NavLink></li>
         <li className="hover:text-white text-gray-100"><NavLink to="/addproduct">Add Product</NavLink></li>
@@ -43,10 +42,16 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end ">
-                    <NavLink to="/"><AiOutlineShoppingCart className="text-2xl mr-5 text-white"></AiOutlineShoppingCart></NavLink>
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar mr-2">
+                        <div className="w-10 rounded-full">
+                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        </div>
+                    </label>
                     {
                         user ?
-                            <button onClick={handleSignOut} className="btn btn-sm btn-primary">Sign Out</button>
+                            <>
+                                <button onClick={handleSignOut} className="btn btn-sm btn-primary">Sign Out</button>
+                            </>
                             :
                             <Link to="/login">
                                 <button className="btn btn-sm btn-error">Login</button>

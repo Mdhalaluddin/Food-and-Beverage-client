@@ -33,11 +33,11 @@ const Login = () => {
             .then(data => { 
                 if (data.insertedId) {
                     Swal.fire(
-                        'Good job!',
-                        'Food added successfully!',
+                        'Success!',
+                        'Login successfully!',
                         'success'
                     )
-                    return navigate("/")
+                    return navigate(location?.state? location.state: "/");
                 }
             })
     }
