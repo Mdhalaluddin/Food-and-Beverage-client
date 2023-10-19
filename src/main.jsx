@@ -10,6 +10,9 @@ import ErrorPage from './components/Page/ErrorPage/ErrorPage';
 import Home from './components/Page/Home/Home';
 import AddCardPage from './components/Page/AddCardPage/AddCardPage';
 import CardDetails from './components/Page/Home/CardDetails/CardDetails';
+import UpdateProduct from './components/Page/UpdateProduct/UpdateProduct';
+import AllFood from './components/Page/Home/AllFood/AllFood';
+import Login from './components/Page/Login/Login';
 
 const router = createBrowserRouter([
   {
@@ -19,19 +22,32 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home> 
+        element: <Home></Home>
       },
       {
-        path:'/addproduct',
-        element:<AddCardPage></AddCardPage>
+        path: '/addproduct',
+        element: <AddCardPage></AddCardPage>
+      },
+      {
+        path: '/allfood',
+        element: <AllFood></AllFood>
       },
       {
         path: "/food/:id",
-        element:<CardDetails></CardDetails>,
-        loader: ()=> fetch('http://localhost:5000/food')
+        element: <CardDetails></CardDetails>,
+        loader: () => fetch('http://localhost:5000/food')
+      },
+      {
+        path: "/updateproduct/:id",
+        element: <UpdateProduct></UpdateProduct>,
+        loader: ({ params }) => fetch(`http://localhost:5000/food/${params.id}`)
+      }, 
+      {
+        path: '/login',
+        element: <Login></Login>
       }
     ]
-    
+
   },
 ]);
 

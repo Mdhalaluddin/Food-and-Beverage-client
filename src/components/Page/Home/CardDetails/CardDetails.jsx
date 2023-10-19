@@ -13,8 +13,6 @@ const CardDetails = () => {
 
         <>
             <Navbar></Navbar>
-
-
             <div className="my-5">
                 <h2 className="text-center text-3xl font-bold my-5 font-serif">Card Details</h2>
                 <div className="hero min-h-screen bg-base-200 max-w-[92%] mx-auto px-4">
