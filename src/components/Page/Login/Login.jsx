@@ -20,7 +20,7 @@ const Login = () => {
         signIn(email, password)
         .then(result =>{
             console.log(result);
-        });
+        
         fetch('http://localhost:5000/food', {
             method: "POST",
             headers: {
@@ -29,9 +29,10 @@ const Login = () => {
             body: JSON.stringify(newLogin)
 
         })
+        
             .then(res => res.json())
             .then(data => { 
-                if (data.insertedId) {
+                if (data) {
                     Swal.fire(
                         'Success!',
                         'Login successfully!',
@@ -40,6 +41,7 @@ const Login = () => {
                     return navigate(location?.state? location.state: "/");
                 }
             })
+        });
     }
     return (
 

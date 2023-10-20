@@ -16,6 +16,7 @@ import Login from './components/Page/Login/Login';
 import Registration from './components/Page/Registration/Registration';
 import AuthProvider from './components/Provider/AuthProvider';
 import PrivetRoute from './components/PriverRoute/PrivetRoute';
+import Cart from './components/Page/Cart/Cart';
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/updateproduct/:id",
-        element: <UpdateProduct></UpdateProduct>,
+        element: <PrivetRoute><UpdateProduct></UpdateProduct></PrivetRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/food/${params.id}`)
       },
       {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
         path: '/registration',
         element: <Registration></Registration>,
         loader: ()=> fetch('http://localhost:5000/user')
+      },{
+        path: '/myCart',
+        element:<PrivetRoute><Cart></Cart></PrivetRoute>,
+        loader: () => fetch('http://localhost:5000/cart/')
       }
     ]
 

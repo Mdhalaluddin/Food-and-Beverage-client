@@ -37,7 +37,7 @@ const UpdateProduct = () => {
                 if (data.modifiedCount > 0) {
                     Swal.fire(
                         'Good job!',
-                        'Food added successfully!',
+                        'Food Update successfully!',
                         'success'
                     )
                     return navigate("/")

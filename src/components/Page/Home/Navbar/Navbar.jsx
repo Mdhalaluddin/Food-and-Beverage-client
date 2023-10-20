@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
@@ -16,7 +15,7 @@ const Navbar = () => {
 
     const navLink = <>
         <li className="text-white"><NavLink to="/">Home</NavLink></li>
-        <li className="hover:text-white text-gray-100"><NavLink to="/addproduct">Add Product</NavLink></li>
+        <li className="hover:text-white text-gray-100"><NavLink to="/myCart">My Cart</NavLink></li>
         <li className="text-white"><NavLink to="/allfood">All Food</NavLink></li>
         <li className="text-white"><NavLink to="/registration">registration</NavLink></li>
         <li className="text-white"><NavLink to="/login">Login</NavLink></li>
