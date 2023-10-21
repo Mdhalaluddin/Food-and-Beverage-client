@@ -9,7 +9,7 @@ const CardDetails = () => {
     const navigate = useNavigate();
     const { id } = useParams();
     const card = cards.find(card => card._id === id)
-    console.log(cards, card, id);
+    // console.log(cards, card, id);
     const handleCardBtn = e => {
         e.preventDefault();
         fetch('http://localhost:5000/cart', {
@@ -48,6 +48,7 @@ const CardDetails = () => {
                                     <p>Name: <span name="name" className="font-bold">{card.name}</span></p>
                                     <p>Price: <span className="font-bold">{card.price}</span></p>
                                 </div>
+                                <p>rating: {card.rating}</p>
                                 <p className="py-6 justify-center pr-10">{card.description}</p>
                                 <input onClick={handleCardBtn} type="submit" value="ADD TO CART" className="w-1/2 btn btn-info hover:bg-red-500" />
                             </div>

@@ -7,7 +7,7 @@ import Footer from "../Home/Footer/Footer";
 const UpdateProduct = () => {
 
     const food = useLoaderData()
-    const { _id, name, brandName, price, category, description, photo } = food;
+    const { _id, name, brandName, price, category, description,  photo, rating } = food;
     const navigate = useNavigate()
     const handleUpdateFood = event => {
         event.preventDefault();
@@ -20,7 +20,8 @@ const UpdateProduct = () => {
         const category = form.category.value;
         const description = form.description.value;
         const photo = form.photo.value;
-        const updateFood = { name, brandName, price, category, description, photo };
+        const rating = form.rating.value;
+        const updateFood = { name, rating, brandName, price, category, description, photo };
         console.log(updateFood);
 
 
@@ -91,11 +92,18 @@ const UpdateProduct = () => {
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
-                                            <span className="label-text">Photo Url</span>
+                                            <span className="label-text">Rating</span>
                                         </label>
-                                        <input type="url" name="photo" defaultValue={photo} placeholder="Photo Url" className="input input-bordered" required />
+                                        <input type="rating" defaultValue={rating} name="rating" placeholder="Rating" className="input input-bordered" required />
                                     </div>
                                 </div>
+
+                            </div>
+                            <div className="form-control w-full">
+                                <label className="label">
+                                    <span className="label-text">Photo Url</span>
+                                </label>
+                                <input type="url" name="photo" placeholder="Photo Url" defaultValue={photo} className="input input-bordered" required />
                             </div>
                             <div className="form-control mt-6">
                                 <input type="submit" value="Add Product" className="btn btn-primary" />
@@ -104,8 +112,8 @@ const UpdateProduct = () => {
                     </div>
                 </div>
             </div>
-           
-                <Footer></Footer>
+
+            <Footer></Footer>
         </>
 
     );

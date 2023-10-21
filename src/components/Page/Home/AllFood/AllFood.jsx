@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import Cards from "../Cards/Cards";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import { useLoaderData } from "react-router-dom";
 
 
 const AllFood = () => {
     const [data, setData] = useState([])
+    const loaderData = useLoaderData();
+    console.log(loaderData);
     useEffect(() => {
         fetch('http://localhost:5000/food', {
             method: "GET",

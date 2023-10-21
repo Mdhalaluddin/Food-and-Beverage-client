@@ -17,6 +17,7 @@ import Registration from './components/Page/Registration/Registration';
 import AuthProvider from './components/Provider/AuthProvider';
 import PrivetRoute from './components/PriverRoute/PrivetRoute';
 import Cart from './components/Page/Cart/Cart';
+import AllProduct from './components/AllProduct/AllProduct';
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/allfood',
-        element: <AllFood></AllFood>
+        element: <AllFood></AllFood>,
       },
       {
         path: "/food/:id",
@@ -58,6 +59,11 @@ const router = createBrowserRouter([
         path: '/myCart',
         element:<PrivetRoute><Cart></Cart></PrivetRoute>,
         loader: () => fetch('http://localhost:5000/cart/')
+      },
+      {
+        path: '/food/:brandName',
+        element: <AllProduct></AllProduct>,
+        loader: ({params})=> fetch(`http://localhost:5000/food/${params.brandName}`)
       }
     ]
 

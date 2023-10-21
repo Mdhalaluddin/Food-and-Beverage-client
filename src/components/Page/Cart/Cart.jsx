@@ -9,8 +9,9 @@ const Cart = () => {
     const loader = useLoaderData()
     const [carts, setCarts] = useState(loader);
 
-    const handleDeletedBtn = id => {
-        fetch(`http://localhost:5000/cart/${id}`, {
+    const handleDeletedBtn = (id )=> {
+        console.log(id);
+        fetch(`http://localhost:5000/carts/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -62,6 +63,7 @@ const Cart = () => {
         <div>
             <Navbar></Navbar>
             <div className="max-w-[92%] mx-auto space-y-6 bg-gray-200 rounded-lg  my-7">
+                <h2 className="text-3xl text-rose-700 text-center font-serif font-bold pt-3">Your Shopping Cart</h2>
                 {
                     carts.map(cart => <div key={cart._id} >
                         <nav className="flex justify-center gap-6 py-7 ">

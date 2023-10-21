@@ -16,8 +16,9 @@ const AddCardPage = () => {
         const price = form.price.value;
         const category = form.category.value;
         const description = form.description.value;
+        const rating = form.rating.value;
         const photo = form.photo.value;
-        const newFood = { name, brandName, price, category, description, photo };
+        const newFood = { name, rating, brandName, price, category, description, photo };
         // console.log(newFood);
 
 
@@ -44,7 +45,7 @@ const AddCardPage = () => {
     }
     return (
         <>
-        <Navbar></Navbar>
+            <Navbar></Navbar>
             <div className="hero min-h-screen bg-rose-100">
                 <div className="hero-content">
                     <div className="card flex-shrink-0 w-full shadow-2xl bg-rose-400 shadow-amber-700">
@@ -86,14 +87,19 @@ const AddCardPage = () => {
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
-                                            <span className="label-text">Photo Url</span>
+                                            <span className="label-text">Rating</span>
                                         </label>
-                                        <input type="url" name="photo" placeholder="Photo Url" className="input input-bordered" required />
+                                        <input type="rating" name="rating" placeholder="Rating" className="input input-bordered" required />
                                     </div>
                                 </div>
+
                             </div>
-
-
+                            <div className="form-control w-full">
+                                <label className="label">
+                                    <span className="label-text">Photo Url</span>
+                                </label>
+                                <input type="url" name="photo" placeholder="Photo Url" className="input input-bordered" required />
+                            </div>
                             <div className="form-control mt-6">
                                 <input type="submit" value="Add Product" className="btn btn-primary" />
                             </div>
