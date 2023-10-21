@@ -1,13 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
 import Navbar from "../Home/Navbar/Navbar";
 import Footer from "../Home/Footer/Footer";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { FcGoogle } from 'react-icons/fc';
+import swal from "sweetalert";
 
 const Login = () => {
-    const {signIn}= useContext(AuthContext)
+    const { signIn, signInGoogle } = useContext(AuthContext)
     const navigate = useNavigate()
+    const [signinError, setSigninError] = useState('')
     const handleLogin = e => {
         e.preventDefault();
 
@@ -18,35 +20,51 @@ const Login = () => {
         const newLogin = { email, password };
         console.log(newLogin);
         signIn(email, password)
-        .then(result =>{
-            console.log(result);
-        
-        fetch('http://localhost:5000/food', {
-            method: "POST",
-            headers: {
-                'content-type': "application/json"
-            },
-            body: JSON.stringify(newLogin)
-
-        })
-        
-            .then(res => res.json())
-            .then(data => { 
-                if (data) {
-                    Swal.fire(
-                        'Success!',
-                        'Login successfully!',
-                        'success'
-                    )
-                    return navigate(location?.state? location.state: "/");
+            .then(result => {
+                console.log(result.user)
+                if(result.user){
+                    swal('Your Successfully login')
+                }
+                    return navigate(location?.state ? location.state : '/');
+                })
+            .catch(error => {
+                console.error(error);
+                // setSingError(error.massage)
+                if (email) {
+                    if (setSigninError) {
+                        swal('Do not match email')
+                        return;
+                    }
+                }
+                if (password) {
+                    if (setSigninError) {
+                        swal('Do not match password')
+                        return;
+                    }
                 }
             })
-        });
+    }
+    const handleGoogleSignIn = () => {
+        signInGoogle()
+            .then(res => {
+                console.log(res.user);
+                if (res.user) {
+                    swal.fire(
+                        'Success!',
+                        'Google Login successfully!',
+                        'success'
+                    )
+                    return navigate(location?.state ? location.state : '/');
+                }
+            })
+            .catch(error => {
+                console.error(error)
+            })
     }
     return (
 
         <>
-        <Navbar></Navbar>
+            <Navbar></Navbar>
             <div className="hero min-h-screen bg-rose-100">
                 <div className="hero-content w-full">
                     <div className="card flex-shrink-0 shadow-2xl bg-rose-400 shadow-amber-700 md:w-2/5 w-2/3">
@@ -76,9 +94,16 @@ const Login = () => {
                                 <span className="btn-link ml-3">Registration</span>
                             </Link>
                         </div>
+                        <div className="text-center py-4 text-red-500">
+                            <button onClick={handleGoogleSignIn} className="btn text-3xl rounded-lg"><FcGoogle></FcGoogle></button>
+
+                        </div>
                     </div>
                 </div>
             </div>
+        {
+            signinError && <p>{signinError}</p>
+        }
             <Footer></Footer>
         </>
     );

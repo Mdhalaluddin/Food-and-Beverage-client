@@ -41,14 +41,16 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end ">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar mr-2">
-                        <div className="w-10 rounded-full">
-                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                        </div>
-                    </label>
+
                     {
-                        user ?
+                        user?.email ?
                             <>
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar mr-2">
+                                    <div className="w-10 rounded-full">
+                                        <img src={user.photoURL} />
+                                    </div>
+                                </label>
+                                <h2 className="md:text-xl font-semibold text-blue-600">{user.displayName}</h2>
                                 <button onClick={handleSignOut} className="btn btn-sm btn-primary">Sign Out</button>
                             </>
                             :

@@ -2,12 +2,14 @@ import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Home/Footer/Footer";
 import Navbar from "../Home/Navbar/Navbar";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { useContext} from "react";
-import Swal from "sweetalert2";
+import { useContext, useState} from "react";
+import swal from 'sweetalert';
 
 
 const Registration = () => {
     const { createUser } = useContext(AuthContext)
+    const [registerError, setRegisterError]= useState('')
+    const [success, setSuccess] = useState('')
     const navigate = useNavigate()
     // const [newUser, setNewUser] = useState([])
     const handleRegistration = event => {
@@ -20,33 +22,46 @@ const Registration = () => {
         const password = form.password.value;
         const newRegistration = { email, password };
         console.log(newRegistration);
+        setRegisterError('');
+        setSuccess('')
+        
+        if(password.length<6){
+            if(setRegisterError){
+                swal(' password should be at least 6 characters or longer')
+            }
+            return;
+        }
+        else if(!/[A-Z]/.test(password)){
+           if(setRegisterError)
+            {
+                swal("Your password must contain at least one upper case letter.");
+            }
+            return;
+        }
+        else if(!/^(?=.*[~`!@#$%^&*()--+={}[\]|\\:;"'<>,.?/_₹]).*$/.test(password)){
+           if(setRegisterError){
+            swal('Your password must contain at least special char from -[ ! @ # $ % ^ & * _ ]')
+           }
+            return;
+        }
+        // create user
         createUser(email, password)
-            .then(result => {
-                console.log(result.user);
-                const user = {email}
-                fetch('http://localhost:5000/user', {
-                    method: "POST",
-                    headers: {
-                        'content-type': "application/json"
-                    },
-                    body: JSON.stringify(user)
-                })
-                    .then(res => res.json())
-                    .then(data => { console.log(data);
-                        if (data.insertedId) {
-                            Swal.fire(
-                                'Good job!',
-                                'Registration successfully!',
-                                'success'
-                            )
-                            return navigate("/")
-                        }
-                    })
-            })
-            .then(error => {
-                console.log(error)
-            })
-
+        .then(result =>{
+            console.log(result.user);
+            navigate(location?.state? location.state: '/')
+            if(setSuccess){
+                
+                swal('User Created Succesefully')
+            }
+        })
+        .catch(error =>{
+            console.log(error);
+            if(email){
+                if(setRegisterError){
+                    swal('email already in use')
+                }  
+            }
+        })
     }
     return (
         <>
@@ -83,6 +98,12 @@ const Registration = () => {
                     </div>
                 </div>
             </div>
+            {
+                registerError && <p>{registerError}</p>
+            }
+            {
+                success && <p>{success}</p>
+            }
             <Footer></Footer>
         </>
     );
