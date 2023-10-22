@@ -1,25 +1,21 @@
-import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 
 
-const AllProduct = () => {
-    const loaderFood = useLoaderData()
-    const [data, setData] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:5000/food', {
-            method: "GET",
-            headers: {
-                'content-type': "application/json"
-            },
-        })
-            .then(res => res.json())
-            .then(data => setData(data))
-    }, [data])
-    console.log(loaderFood);
+
+const AllProduct = ({ product }) => {
+    // const {_id} = useParams()
+    const { img_url, brandName } = product;
     return (
-        <div>
-            
-        </div>
+        <Link to={`/foods/${brandName}`}>
+            <div className="card  bg-rose-50 shadow-xl">
+                <figure><img src={product.img_url} alt="photo" className="h-[200px] w-full" /></figure>
+                <div className="card-body text-red-600">
+                    <h2 className="text-2xl font-semibold text-center">{product.brandName}</h2>
+                    <div className="flex justify-center">
+                    </div>
+                </div>
+            </div>
+        </Link>
     );
 };
 

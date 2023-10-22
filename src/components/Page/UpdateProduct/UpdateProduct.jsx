@@ -106,7 +106,7 @@ const UpdateProduct = () => {
                                 <input type="url" name="photo" placeholder="Photo Url" defaultValue={photo} className="input input-bordered" required />
                             </div>
                             <div className="form-control mt-6">
-                                <input type="submit" value="Add Product" className="btn btn-primary" />
+                                <input type="submit" value="Update Product" className="btn btn-primary" />
                             </div>
                         </form>
                     </div>

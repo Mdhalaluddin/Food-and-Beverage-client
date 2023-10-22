@@ -4,7 +4,7 @@ const Cover = () => {
     return (
         <div className="hero min-h-screen bg-base-200 max-w-[92%] mx-auto mt-10">
             <div className="hero-content flex-col lg:flex-row-reverse px-6">
-                <div className="carousel w-1/2">
+                <div className="carousel md:w-1/2">
                     <div id="slide1" className="carousel-item relative w-full">
                         <img src="https://i.ibb.co/WPdCXWg/lidye-1-Shk-Pk-Nk-Nw-unsplash.jpg" className="w-full" />
                         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
