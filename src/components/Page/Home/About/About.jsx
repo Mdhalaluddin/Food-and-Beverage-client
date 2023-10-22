@@ -7,7 +7,7 @@ const About = () => {
                     <img src="https://i.ibb.co/xzXghq4/luigi-pozzoli-i-IS1-SIO5-a-Y-unsplash.jpg" className="rounded-lg shadow-2xl" />
                 </div>
                 <div className="md:w-2/5 md:ml-4 ">
-                    <h3 className="text-xl font-serif">
+                    <h3 className="text-xl text-red-400 font-semibold font-serif p-4">
                         About Company </h3>
                     <h1 className="md:text-4xl text-2xl font-bold">Where Quality Food Meet Excellent Service.</h1>
                     <p className="py-4 font-semibold">It is the perfect dining experience where every dish is crafted with fresh, high-quality ingredients and served by friendly staff who go</p>

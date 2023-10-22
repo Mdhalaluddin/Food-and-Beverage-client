@@ -16,7 +16,7 @@ const Home = () => {
         },
         {
             "id": "02",
-            "brandName": "Pizz",
+            "brandName": "Pizza",
             "img_url": "https://i.ibb.co/b2kvz3j/ivan-torres-MQUqbmsz-GGM-unsplash.jpg"
         },
         {
@@ -26,7 +26,7 @@ const Home = () => {
         },
         {
             "id": "04",
-            "brandName": "Coffee",
+            "brandName": "Coffe",
             "img_url": "https://i.ibb.co/NS6DjnS/frank-mckenna-j-ODz47e-M1w8-unsplash-1.jpg"
         },
         {
