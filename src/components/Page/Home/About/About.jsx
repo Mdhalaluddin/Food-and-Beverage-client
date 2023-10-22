@@ -1,7 +1,7 @@
 
 const About = () => {
     return (
-        <div className="hero  max-w-[92%] mx-auto bg-base-300">
+        <div className="hero  max-w-[92%] mx-auto bg-base-300 my-8">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="md:w-2/5 md:mr-6">
                     <img src="https://i.ibb.co/xzXghq4/luigi-pozzoli-i-IS1-SIO5-a-Y-unsplash.jpg" className="rounded-lg shadow-2xl" />
@@ -32,8 +32,27 @@ const About = () => {
                         </div>
                     </nav>
                     <div>
-                        <div className="card-actions my-4">
+                        <div className="card-actions flex my-4 justify-center items-center mr-16">
                             <button className="btn btn-primary hover:bg-red-400">About More</button>
+                            <div className="flex justify-center items-center ml-6 h-24">
+                                <div className="avatar mr-3" >
+                                    <div className="w-24 h-24 rounded-full mt-10 md:mt-0">
+                                        <img className="w-20 h-20" src="https://i.ibb.co/1J8Jp19/1697990924046.jpg" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 className="card-title">Shahid Uddin</h2>
+                                    <p>Founder CEO</p>
+                                </div>
+                            </div>
+                            {/* <div className="card h-20 card-side bg-base-100 shadow-xl">
+                                <div className="avatar">
+
+                                </div>
+                                <div className="card-body">
+
+                                </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
