@@ -1,8 +1,18 @@
-# React + Vite
+# Food And Beverage
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Food and beverage is food realeted website.
+- This website uses `telwind css` `daigy Ui` `firebase` and database site `MongoDB`.
+- This website Home page one navbar one cover tree silider six card this card brand related photo and  this photo.
+- Home page six data is fake data.
+- One about section or footer this website.
+- This website use dark and light toggole btn. this btn click dark and light. this data used local stored.
+- Firebase login email or password and google login. login user data firebase stored.
+- Food and beverage website main data store MongoDB.
 
-Currently, two official plugins are available:
+# clint site git link: https://github.com/programming-hero-web-course-4/b8a10-brandshop-client-side-Mdhalaluddin
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Server site git link: https://github.com/programming-hero-web-course-4/b8a10-brandshop-server-side-Mdhalaluddin
+
+# Live link: 
+
+
