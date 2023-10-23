@@ -22,7 +22,7 @@ const AddCardPage = () => {
         // console.log(newFood);
 
 
-        fetch('http://localhost:5000/food', {
+        fetch('https://food-and-beverage-servar.vercel.app/food', {
             method: "POST",
             headers: {
                 'content-type': "application/json"

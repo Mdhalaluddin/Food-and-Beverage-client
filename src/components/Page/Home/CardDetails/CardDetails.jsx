@@ -12,7 +12,7 @@ const CardDetails = () => {
     // console.log(cards, card, id);
     const handleCardBtn = e => {
         e.preventDefault();
-        fetch('http://localhost:5000/cart', {
+        fetch('https://food-and-beverage-servar.vercel.app/cart', {
             method: "POST",
             headers:{
                 'content-type': "application/json"

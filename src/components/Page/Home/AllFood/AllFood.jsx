@@ -10,7 +10,7 @@ const AllFood = () => {
     const loaderData = useLoaderData();
     console.log(loaderData);
     useEffect(() => {
-        fetch('http://localhost:5000/food', {
+        fetch('https://food-and-beverage-servar.vercel.app/food', {
             method: "GET",
             headers: {
                 'content-type': "application/json"

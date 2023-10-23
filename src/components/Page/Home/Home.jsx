@@ -31,7 +31,7 @@ const Home = () => {
         },
         {
             "id": "04",
-            "brandName": "Hot Sushi",
+            "brandName": "Sushi",
             "img_url": "https://i.ibb.co/5kqnqL8/fly-d-kwg-CZZrhcp0-unsplash-1.jpg"
         },
         {

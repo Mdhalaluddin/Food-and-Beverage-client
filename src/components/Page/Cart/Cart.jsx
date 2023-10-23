@@ -11,7 +11,7 @@ const Cart = () => {
 
     const handleDeletedBtn = (id )=> {
         console.log(id);
-        fetch(`http://localhost:5000/carts/${id}`, {
+        fetch(`https://food-and-beverage-servar.vercel.app/carts/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -39,7 +39,7 @@ const Cart = () => {
         //   })
         //   .then((result)=>{
         //     if(result.isConfirmed){
-        //         fetch(`http://localhost:5000/cart/${id}`,{
+        //         fetch(`https://food-and-beverage-servar.vercel.app/cart/${id}`,{
         //             method: 'DELETE'
         //         })
         //         .then(res => res.json())

@@ -40,12 +40,12 @@ const router = createBrowserRouter([
       {
         path: "/food/:id",
         element: <PrivetRoute><CardDetails></CardDetails></PrivetRoute>,
-        loader: () => fetch('http://localhost:5000/food')
+        loader: () => fetch('https://food-and-beverage-servar.vercel.app/food')
       },
       {
         path: "/updateproduct/:id",
         element: <PrivetRoute><UpdateProduct></UpdateProduct></PrivetRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/foods/${params.id}`)
+        loader: ({ params }) => fetch(`https://food-and-beverage-servar.vercel.app/foods/${params.id}`)
       },
       {
         path: '/login',
@@ -54,16 +54,16 @@ const router = createBrowserRouter([
       {
         path: '/registration',
         element: <Registration></Registration>,
-        loader: ()=> fetch('http://localhost:5000/user')
+        loader: ()=> fetch('https://food-and-beverage-servar.vercel.app/user')
       },{
         path: '/myCart',
         element:<PrivetRoute><Cart></Cart></PrivetRoute>,
-        loader: () => fetch('http://localhost:5000/cart/')
+        loader: () => fetch('https://food-and-beverage-servar.vercel.app/cart/')
       },
       {
         path: '/foods/:brandName',
         element: <Food></Food>,
-        loader: ({params})=> fetch(`http://localhost:5000/food/${params.brandName}`)
+        loader: ({params})=> fetch(`https://food-and-beverage-servar.vercel.app/food/${params.brandName}`)
       }
     ]
 
