@@ -1,11 +1,11 @@
 # Food And Beverage
 
-- Food and beverage is food realeted website.
-- This website uses `telwind css` `daigy Ui` `firebase` and database site `MongoDB`.
-- This website Home page one navbar one cover tree silider six card this card brand related photo and  this photo.
+- Food and beverage is food related website.
+- This website uses `tailwind css` `daisyUI Ui` `firebase` and database site `MongoDB`.
+- This website Home page one navbar one cover tree slider six card this card brand related photo and  this photo.
 - Home page six data is fake data.
 - One about section or footer this website.
-- This website use dark and light toggole btn. this btn click dark and light. this data used local stored.
+- This website use dark and light toggle btn. this btn click dark and light. this data used local stored.
 - Firebase login email or password and google login. login user data firebase stored.
 - Food and beverage website main data store MongoDB.
 

@@ -36,7 +36,7 @@ const Home = () => {
         },
         {
             "id": "04",
-            "brandName": "Drink",
+            "brandName": "Drink & Juice",
             "img_url": "https://i.ibb.co/9nz6v54/ben-kolde-0-Ussqg7kk-Qo-unsplash-1.jpg"
         }
     ]

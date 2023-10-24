@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 
 
 const AllProduct = ({ product }) => {
-    // const {_id} = useParams()
-    const { img_url, brandName } = product;
+    const { brandName } = product;
         return (
                     <Link to={`/foods/${brandName}`}>
                         <div className="card  bg-rose-50 shadow-xl">
